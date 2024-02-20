@@ -13,14 +13,15 @@
 
 module purge
 ml CUDA/12.3.0 GCCcore/13.2.0
-#source ../torch_venv/bin/activate
+# source ../torch_venv/bin/activate
 
+# Login to environment
 module load Anaconda3/2022.10
 source activate gpjax
 
-cp -r ./data $TMPDIR
+# cp -r ./data $TMPDIR
 
 # jobstats -t -s &
-#python ./main.py --device cuda --batch_size 2500 --data_dir $TMPDIR/data/061/train --test_dir $TMPDIR/data/061/test
+# python ./main.py --device cuda --batch_size 2500 --data_dir $TMPDIR/data/061/train --test_dir $TMPDIR/data/061/test
 python main.py 
 # jobstats
